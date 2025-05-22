@@ -1,1 +1,6 @@
 streamlit
+streamlit-sortables
+streamlit-drawable-canvas
+streamlit-lottie
+streamlit-chat
+watchdog
