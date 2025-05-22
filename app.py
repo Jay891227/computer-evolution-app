@@ -149,7 +149,6 @@ with tabs[4]:
 # --- 關卡5：PC組裝（組裝之魂） ---
 with tabs[5]:
     st.header("關卡5：微處理器與PC—組裝之魂")
-
     parts = [
         "![CPU](assets/cpu.png)  CPU",
         "![RAM](assets/ram.png)  RAM",
@@ -158,13 +157,11 @@ with tabs[5]:
         "![電源](assets/psu.png)  電源",
         "![I/O](assets/io.png)  I/O"
     ]
-
     order = sort_items(
-        "stage5",                      # 這裡是 key
-        parts,                         # 這裡是 items
-        header="請將零件拖曳到此處，完成 PC 組裝"  # 這裡是標題
+        parts,
+        key="stage5",
+        header="請將零件拖曳到此處，完成 PC 組裝"
     )
-
     if st.button("檢查組裝"):
         clean_order = [s.split()[-1] for s in order]
         target = ["CPU","RAM","主機板","儲存裝置","電源","I/O"]
@@ -172,8 +169,8 @@ with tabs[5]:
             st.success("🎉 PC 組裝成功！")
         else:
             st.error(f"❌ 順序錯誤：{clean_order}")
-
     st.info("**1971** Intel 4004 首顆微處理器帶來個人電腦革命。")
+
 
 # --- 關卡6：AI Chatbot（智能之眼） ---
 with tabs[6]:
